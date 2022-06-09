@@ -1,5 +1,5 @@
 {% extends "exercise_base.html" %}
-
+{% load static %}
 {% block title %}{{ block.super }}Malicious Code Execution{% endblock %}
 
 {% block header %}
@@ -70,5 +70,5 @@
 
 {% block extra_js %}
 {{ block.super }}
-<script src="{{STATIC_URL}}js/exercises/injection-code-execution.js"></script>
+<script src="{% static 'js/exercises/injection-code-execution.js' %}"></script>
 {% endblock %}

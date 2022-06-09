@@ -1,5 +1,5 @@
 {% extends "exercise_base.html" %}
-
+{% load static %}
 {% block title %}{{ block.super }}XSS via URL Path Variables{% endblock %}
 
 {% block header %}
@@ -44,7 +44,7 @@ JavaScript that will change this page's title to <code>PLZ HACK MY USERS</code>.
 
 {% block extra_js %}
 {{ block.super }}
-<script src="{{STATIC_URL}}js/exercises/xss-path.js"></script>
+<script src="{% static 'js/exercises/xss-path.js' %}"></script>
 <script type="text/javascript">
 var myvar = "{{path|safe}}";
 </script>

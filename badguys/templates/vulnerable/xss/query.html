@@ -1,5 +1,5 @@
 {% extends "exercise_base.html" %}
-
+{% load static %}
 {% block title %}{{ block.super }}XSS via Query Parameters{% endblock %}
 
 {% block header %}
@@ -36,7 +36,7 @@ Bonus points if you figure out how to hide the image from the end user!</p>
 <script type="text/javascript">
     var myvar = "{{qs|safe}}";
 </script>
-<script src="{{STATIC_URL}}js/exercises/xss-query.js"></script>
+<script src="{% static 'js/exercises/xss-query.js' %}"></script>
 {% endblock %}
 
 {% block extra_topnav %}
